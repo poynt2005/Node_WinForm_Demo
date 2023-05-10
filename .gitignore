@@ -1,0 +1,17 @@
+*.dll
+*.exp
+*.obj
+*.o
+*.exe
+*.zip
+*.node
+*.pch
+*.lib
+*.pdb
+*.bak
+node_modules
+.vs
+obj
+bin
+x64
+Debug

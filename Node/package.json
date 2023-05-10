@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "path.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-native": "powershell -F .\\build.ps1",
+    "build-executable": "pkg . -t win-x64 --output ./winform.exe"
+  },
+  "bin": "./test.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gypfile": true,
+  "devDependencies": {
+    "node-addon-api": "^6.1.0",
+    "pkg": "^5.8.1"
+  }
+}
