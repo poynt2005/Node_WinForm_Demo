@@ -24,6 +24,7 @@ extern "C" {
 	EXPORTAPI void SetUserData(const FormHandle, const char*);
 	EXPORTAPI const char* GetUserData(const FormHandle);
 	EXPORTAPI void SetButtonClickDelegate(const FormHandle, void(*)(const char*));
+	EXPORTAPI void FreeCharBuffer(char** buf);
 #ifdef __cplusplus
 }
 #endif

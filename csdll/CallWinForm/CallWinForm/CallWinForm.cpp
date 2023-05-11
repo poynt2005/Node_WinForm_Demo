@@ -152,6 +152,11 @@ const char* GetUserData(const FormHandle cHandle) {
 	auto csOutString = safe_cast<System::String^>(result);
 	std::string outString;
 	MarshalString(csOutString, outString);
+
+	auto outBuffer = new char[outString.length() + 1];
+	memcpy(outBuffer, outString.data(), outString.length());
+	outBuffer[outString.length()] = '\0';
+	
 	return outString.c_str();
 }
 
@@ -167,4 +172,9 @@ void SetButtonClickDelegate(const FormHandle cHandle, void(*callbackPtr)(const c
 
 	array<System::Object^>^ param = { delegateInstance };
 	instanceMethodInfo->Invoke(callFormInstance, param);
+}
+
+void FreeCharBuffer(char** buf) {
+	delete[](*buf);
+	*buf = nullptr;
 }
